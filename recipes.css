@@ -45,6 +45,23 @@
   background-color: #005fa3;
 }
 
+.gumbo-button {
+    font-size: 16px;
+    height: 10px;
+    width: 20px;
+    padding: 5px 5px;
+    background-color: #b2b2b2;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.gumbo-button:hover {
+  background-color: #005fa3;
+}
+
+
 <style>
     table {
         width: 100%;
