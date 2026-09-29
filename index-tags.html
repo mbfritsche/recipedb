@@ -818,11 +818,13 @@ Table of Contents
 <script>
 function filterRecipes(tag) {
 	const recipes = document.querySelectorAll('.recipe');
+	let count = 0
 	
 	recipes.forEach(function(recipe) {
 
 		if (tag === 'all') {
 			recipe.style.display = '';
+			count++;
 			return;
 		}
 
@@ -830,10 +832,20 @@ function filterRecipes(tag) {
 
 		if (tags.includes(tag)) {
 			recipe.style.display = '';
+			count++;
 		} else {
 			recipe.style.display = 'none';
 		}
 	});
+	const counter = document.getElementById('recipeCount');
+
+	if (tag === 'all') {
+		counter.innerHTML =
+			'Showing all tagged recipes (' + count + ')';
+	} else {
+		counter.innerHTML =
+			'Showing ' + count + ' ' + tag + ' recipes';
+	}
 }
 </script>
 
