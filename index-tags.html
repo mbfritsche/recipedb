@@ -813,24 +813,22 @@ Table of Contents
 
 <script>
 function filterRecipes(tag) {
- 
-	const recipes =
-		document.querySelectorAll('.recipe');
- 
-	recipes.forEach(recipe => {
- 
+	const recipes = document.querySelectorAll('.recipe'); 
+	
+	recipes.forEach(function(recipe) {
+	
 		if (tag === 'all') {
 			recipe.style.display = '';
 			return;
 		}
  
-		const tags =
-			recipe.dataset.tags.split(',');
- 
-		recipe.style.display =
-			tags.includes(tag)
-			? ''
-			: 'none';
+		const tags = recipe.dataset.tags.split(',');
+
+		if (tags.includes(tag)) {
+			recipe.style.display = '';
+		} else {
+			recipe.style.display = 'none';
+		}
 	});
 }
 </script>
