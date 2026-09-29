@@ -64,6 +64,16 @@ Table of Contents
 
 <i>Recipes marked Vegan (V) and Vegetarian (v)</i>
 
+<!-- Filters for tags -->
+
+<div id="filters">
+	<button onclick="filterRecipes('all')">Show All</button>
+	<button onclick="filterRecipes('cajun')">Cajun</button>
+	<button onclick="filterRecipes('thai')">Thai</button>
+	<button onclick="filterRecipes('vegetarian')">Vegetarian</button>
+	<button onclick="filterRecipes('seafood')">Seafood</button>
+</div>
+
 <CENTER><P ALIGN=CENTER><HR WIDTH="100%"></P></CENTER>
 
 <div class=top-container>
@@ -473,7 +483,7 @@ Table of Contents
 	<li><a href="PanFriedBread.html">Pan-fried Bread</a>
 	<li><a href="RosemaryDinnerRolls.html">Rosemary Dinner Rolls</a>
 	<li><a href="SandwichBread.html">Sandwich Bread</a>
-	<li class="recipe" data-tags="mexican,yeast">><a href="Telera.html">Telera</a>
+	<li class="recipe" data-tags="mexican,bakery"><a href="Telera.html">Telera</a>
 	<li><a href="WholeWheatBread.html">Whole Wheat Bread</a>
 	<li><a href="YorkshirePudding.html">Yorkshire Pudding</a>
 	<li><a href="ZucchiniBread.html">Zucchini Bread</a>
@@ -798,4 +808,30 @@ Table of Contents
 <a href="#topofpage"><topbutton onclick="topofpage">Top of Page</topbutton></a>
 
 <HR ALIGN=LEFT SIZE=4 WIDTH="50%"></P>
+
+<!-- Java script for tags -->
+
+<script>
+function filterRecipes(tag) {
+ 
+	const recipes =
+		document.querySelectorAll('.recipe');
+ 
+	recipes.forEach(recipe => {
+ 
+		if (tag === 'all') {
+			recipe.style.display = '';
+			return;
+		}
+ 
+		const tags =
+			recipe.dataset.tags.split(',');
+ 
+		recipe.style.display =
+			tags.includes(tag)
+			? ''
+			: 'none';
+	});
+}
+</script>
 
