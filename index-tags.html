@@ -96,6 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
+<!-- Search script -->
+
 <script>
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -122,6 +124,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
             });
+		document
+    		.querySelectorAll("h4")
+    		.forEach(function(header) {
+
+		        const ul = header.nextElementSibling;
+
+       			 if (!ul) return;
+
+		        const visibleRecipes =
+        		    ul.querySelectorAll('li:not([style*="display: none"])');
+
+     *  if (visibleRecipes.length > 0) {*            header.style.display =*"";
+            ul.style.display =*"";
+        } else {
+            h*ader.style.display = "none";
+     *      ul.style.display = "none";
+ *      }
+
+    });
 
     });
 
