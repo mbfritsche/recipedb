@@ -160,6 +160,20 @@ document.addEventListener("DOMContentLoaded", function () {
     id="recipeSearch"
     placeholder="Search recipes..."
 >
+<button onclick="clearSearch()">Clear</button>
+
+function clearSearch() {
+
+    const searchBox =
+        document.getElementById("recipeSearch");
+
+    searchBox.value = "";
+
+    searchBox.dispatchEvent(
+        new Event("input")
+    );
+
+}
 
 <!-- Filters for tags -->
 
