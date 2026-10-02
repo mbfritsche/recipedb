@@ -135,12 +135,17 @@ document.addEventListener("DOMContentLoaded", function () {
 		        const visibleRecipes =
         		    ul.querySelectorAll('li:not([style*="display: none"])');
 
-     *  if (visibleRecipes.length > 0) {*            header.style.display =*"";
-            ul.style.display =*"";
-        } else {
-            h*ader.style.display = "none";
-     *      ul.style.display = "none";
- *      }
+				if (visibleRecipes.length > 0) {
+
+    				header.style.display = "";
+    				ul.style.display = "";
+
+				} else {
+
+				    header.style.display = "none";
+    				ul.style.display = "none";
+
+				}
 
     });
 
