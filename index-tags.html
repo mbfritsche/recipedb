@@ -95,6 +95,40 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 </script>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const searchBox =
+        document.getElementById("recipeSearch");
+
+    searchBox.addEventListener("input", function () {
+
+        const search =
+            this.value.toLowerCase();
+
+        document
+            .querySelectorAll("ul li")
+            .forEach(function(li) {
+
+                const text =
+                    li.textContent.toLowerCase();
+
+                if (text.includes(search)) {
+                    li.style.display = "";
+                } else {
+                    li.style.display = "none";
+                }
+
+            });
+
+    });
+
+});
+
+</script>
+
 <input
     type="text"
     id="recipeSearch"
