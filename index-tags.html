@@ -67,31 +67,30 @@ Table of Contents
 <!-- Recipe counter for the buttons -->
 
 <script>
-console.log("counter script running");
+
 document.addEventListener("DOMContentLoaded", function () {
 
-	document.querySelectorAll('a[name]').forEach(anchor => {
+    const buttons =
+        document.querySelectorAll('.button-container button');
 
-		const categoryName = anchor.name;
+    const sections =
+        document.querySelectorAll('h4');
 
-		const button = document.querySelector(
-			`.button-container a[href="#$[categoryName}"] button`
-		);
+    console.log("Buttons:", buttons.length);
+    console.log("Sections:", sections.length);
 
-		if (!button) return;
+    buttons.forEach((button, index) => {
 
-		const nextHeader = anchor.nextElementSibling;
-		if (!nextHeader) return;
+        const ul =
+            sections[index].nextElementSibling;
 
-		const recipeList = nextHeader.nextElementSibling;
-		if (!recipeList || recipeList.tagName !== 'UL') return;
+        if (!ul) return;
 
-		const count =
-			recipeList.querySelectorAll('li').length;
+        const count =
+            ul.querySelectorAll('li').length;
 
-		Button.textContent =
-			'${button.textContent} (${count})';
-	});
+        button.textContent += ` (${count})`;
+    });
 
 });
 
