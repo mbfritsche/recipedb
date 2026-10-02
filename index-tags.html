@@ -64,6 +64,39 @@ Table of Contents
 
 <i>Recipes marked Vegan (V) and Vegetarian (v)</i>
 
+<!-- Recipe counter for the buttons -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+	document.querySelectorAll('a[name]').forEach(anchor => {
+
+		const categoryName = anchor.name;
+
+		const button = document.querySelector(
+			'.button-container a[href="#$[categoryName}"] button'
+		);
+
+		if (!button) return;
+
+		const nextHeader = anchor.nextElementSibling;
+		if (!nextHeader) return;
+
+		const recipeList = nextHeader.nextElementSibling;
+		if (!recipeList || recipeList.tagName !== 'UL') return;
+
+		const count =
+			recipeList.querySelectorAll('li').length;
+
+		Button.textContent =
+			'${button.textContent} (${count})';
+	});
+
+});
+ 
+</script>
+
 <!-- Filters for tags -->
 
 <div id="filters">
