@@ -67,7 +67,7 @@ Table of Contents
 <!-- Recipe counter for the buttons -->
 
 <script>
-
+console.log("counter script running");
 document.addEventListener("DOMContentLoaded", function () {
 
 	document.querySelectorAll('a[name]').forEach(anchor => {
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		const categoryName = anchor.name;
 
 		const button = document.querySelector(
-			'.button-container a[href="#$[categoryName}"] button'
+			`.button-container a[href="#$[categoryName}"] button`
 		);
 
 		if (!button) return;
