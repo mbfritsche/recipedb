@@ -1,8 +1,24 @@
 <head>
+
 <title>The GUMBO Page/Michael's Recipes</title>
 
 <link rel="stylesheet" href="styles.css">
 
+<script type="module">
+import { ApplicationInsights }
+from "https://js.monitor.azure.com/scripts/b/ai.3.min.js";
+
+const appInsights = new ApplicationInsights({
+  config: {
+    connectionString:
+      "InstrumentationKey=952059b5-5262-4c67-821e-6fe23d8e312a;IngestionEndpoint=https://westus2-2.in.applicationinsights.azure.com/;LiveEndpoint=https://westus2.livediagnostics.monitor.azure.com/;ApplicationId=84fb2cd8-46ee-48cc-9c07-f89388e050bb"
+  }
+});
+
+appInsights.loadAppInsights();
+appInsights.trackPageView();
+</script>
+	
 </head>
 
 <center>
