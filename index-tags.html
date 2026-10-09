@@ -955,5 +955,20 @@ function filterRecipes(tag) {
 			'Showing ' + count + ' ' + tag + ' recipes';
 	}
 }
+
+document.addEventListener('click', function(event) {
+
+    const link = event.target.closest('a');
+
+    if (!link) return;
+
+    console.log(
+        'Recipe clicked:',
+        link.getAttribute('href'),
+        link.textContent.trim()
+    );
+
+});
+
 </script>
 
