@@ -22,11 +22,11 @@ p {
 
 /* Style buttons */
 .button-container button {
-    font-size: 18px;
+    font-size: 20px;
     margin: 10px;
     height: 60px;
     width: 300px;
-    padding: 20px 40px;
+    padding: 10px 30px;
     background-color: #213D54;
     color: white;
     border: none;
